@@ -1,11 +1,12 @@
-#Install pytest
-Run the following command in your command line:
+# Install pytest
+
+To install pytest, run the following command in your command line:
 
 ```console
 $ pip install -U pytest
 ```
 
-Check that you installed the correct version:
+You can check if pytest is already installed:
 
 ```console
 $ pytest --version
