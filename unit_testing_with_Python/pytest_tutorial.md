@@ -145,26 +145,91 @@ class Wallet(object):
         self.balance += amount
 
 ```
-# test_wallet.py
-import pytestfrom wallet import Wallet, NotEnoughCash
 
-def test_default_initial_amount():    wallet = Wallet()    assert wallet.balance == 0
-# implement test_setting_initial_amount() test function to set 50 as initial amountdef test_setting_initial_amount():##
-def test_wallet_add():    wallet = Wallet()    wallet.add(30)    assert wallet.balance == 30
-# implement test_wallet_spend() test function to initiate a Wallet object with 50 and spend 30 and then test the expected balance 20def test_wallet_spend():##
-def test_wallet_spend_cash_raises_exception_on_not_enough_cash():    wallet = Wallet(50)    with pytest.raises(NotEnoughCash):        wallet.spend(100)        ```After completing the above test module you may run it by
-```python3 -m pytest test_wallet.py ```
-# 4rd example: refactoring with _fixture_Perhaps you have noted some repetition of coding for initializing objects in each test. We initialize two times the same _Wallet_ instance with an initial amount of zero and three times with initial amounts of 50. In big projects, sometimes each **arrange** step needs a large amount of coding since it may need reading a database, extracting a subset, some calculation, etc. The _pytest_ have a solution to reduce the amount of boilerplate code in such cases. Fixtures help us set up some helper code. They should run in order to **arrange** the tests before any tests are executed.
+We write a set of unit tests to test desired properties of the class _Wallet_. Please complete the incomplete test functions:
+
+```
+# test_wallet.py
+
+import pytest
+from wallet import Wallet, NotEnoughCash
+
+
+def test_default_initial_amount():
+    wallet = Wallet()
+    assert wallet.balance == 0
+
+# implement test_setting_initial_amount() test function to set 50 as initial amount
+def test_setting_initial_amount():
+    ....
+
+def test_wallet_add():
+    wallet = Wallet()
+    wallet.add(30)
+    assert wallet.balance == 30
+    
+# implement test_wallet_spend() test function to initiate a Wallet object with 50 and spend 30 and then test the expected balance 20
+def test_wallet_spend():
+    ....
+
+def test_wallet_spend_cash_raises_exception_on_not_enough_cash():
+    wallet = Wallet(50)
+    with pytest.raises(NotEnoughCash):
+        wallet.spend(100)
+
+```
+After completing the above test module you may run it by
+```
+python3 -m pytest test_wallet.py 
+```
+# 4rd example: refactoring with _fixture_
+
+Perhaps you have noted some repetition of coding for initializing objects in each test. We initialize two times the same _Wallet_ instance with an initial amount of zero and three times with initial amounts of 50. In big projects, sometimes each **arrange** step needs a large amount of coding since it may need reading a database, extracting a subset, some calculation, etc. The _pytest_ have a solution to reduce the amount of boilerplate code in such cases. Fixtures help us set up some helper code. They should run in order to **arrange** the tests before any tests are executed.
+
 Lets see how fixtures work in practice. Since we had two groups of instance creation with zero and 50 initial amounts, we wrote two fixtures to make objects with the desired initial amount. Then each test function takes a suitable fixture function.
-```# test_wallet_fixture.py
-import pytestfrom wallet import Wallet, NotEnoughCash
-# wallet_0 returns an instance of Wallet with balance of 0@pytest.fixturedef wallet_0():    return Wallet()
-# wallet_50 returns an instance of Wallet with balance of 50@pytest.fixturedef wallet_50():    return Wallet(50)
-def test_default_initial_amount(wallet_0):    assert wallet_0.balance == 0
-# Implement test_setting_initial_amount test function in order to test the balance of Wallet instance with initial amount of 50 # def test_setting_initial_amount(...#     ...
-def test_wallet_add(wallet_0):    wallet_0.add(30)    assert wallet_0.balance == 30
-# Implement test_setting_initial_amount test function in order to test the balance of Wallet instance initiated with 50 after spending 30 # def test_wallet_spend(...#     ...
-def test_wallet_spend_cash_raises_exception_on_not_enough_cash(wallet_50):    with pytest.raises(NotEnoughCash):        wallet_50.spend(100)```
-# SummaryUnit testing is one of the software testing practices by which the smallest components of a software are tested individually. It also helps you to find the probable bugs which are created by future changes in the code. The AAA (Arrange-Act-Assert) pattern is a standard for software testing:
-- Arrange: create target objects (like test data)- Act: apply the tested method- Assert: check whether the expectations were met
+
+```
+# test_wallet_fixture.py
+
+import pytest
+from wallet import Wallet, NotEnoughCash
+
+# wallet_0 returns an instance of Wallet with balance of 0
+@pytest.fixture
+def wallet_0():
+    return Wallet()
+
+# wallet_50 returns an instance of Wallet with balance of 50
+@pytest.fixture
+def wallet_50():
+    return Wallet(50)
+
+def test_default_initial_amount(wallet_0):
+    assert wallet_0.balance == 0
+
+# Implement test_setting_initial_amount test function in order to test the balance of Wallet instance with initial amount of 50 
+def test_setting_initial_amount
+    ...
+
+def test_wallet_add(wallet_0):
+    wallet_0.add(30)
+    assert wallet_0.balance == 30
+
+# Implement test_setting_initial_amount test function in order to test the balance of Wallet instance initiated with 50 after spending 30
+def test_wallet_spend
+    ...
+
+def test_wallet_spend_cash_raises_exception_on_not_enough_cash(wallet_50):
+    with pytest.raises(NotEnoughCash):
+        wallet_50.spend(100)
+        
+```
+
+# Summary
+Unit testing is one of the software testing practices by which the smallest components of a software are tested individually. It also helps you to find the probable bugs which are created by future changes in the code. The AAA (Arrange-Act-Assert) pattern is a standard for software testing:
+
+- Arrange: create target objects (like test data)
+- Act: apply the tested method
+-  Assert: check whether the expectations were met
+
 _pytest_ is a powerful and easy-to-use tool for unit testing. It enables a programmer to test the outcome of a method or function with few lines of code. It also provides _fixture_ functions to prevent writing boilerplate codes to generate testing data. 
