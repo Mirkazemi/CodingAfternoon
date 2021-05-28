@@ -10,17 +10,37 @@ _pytest_ and _unittest_ are two popular unit testing frameworks for Python. The 
 
 # Install pytest
 To install _pytest_, run the following command in your command line:
-```console$ pip install -U pytest```or```console$ pip3 install -U pytest```
+
+```console$ pip install -U pytest```
+or
+```console$ pip3 install -U pytest```
+
 You can check if _pytest_ is already installed:
 ```console$ pytest --versionpytest 6.2.4```
+
 # Arrange-Act-Assert (AAA) model
 Arrange-Act-Assert is a simple but powerful pattern to structure test cases. It directs an order of operations:
-1. **Arrange:** Setting up inputs, targets and conditions for the test. Does the test requires, for example:   * any objects or special settings?   * to download or read a dataset or variables?   * to log into a web app?  2. **Act:** Calling some function or method on the target behavior. Act steps should cover the main thing to be tested.
+1. **Arrange:** Setting up inputs, targets and conditions for the test. Does the test requires, for example:   
+  * any objects or special settings?   
+  * to download or read a dataset or variables?   
+  * to log into a web app?  
+2. **Act:** Calling some function or method on the target behavior. Act steps should cover the main thing to be tested.
 3. **Assert:** Assert that some end condition is true or in other words hee outcome of the act is as expected. Act steps should bring out some sort of outcomes or responses. Assert steps verify the goodness or badness of that response. For example, sometimes, assertions are checking numeric or string values. Assertions will ultimately determine if the test passes or fails.
+
 # First example: Assert
 Let's write small tests just to check if _pytest_ is working properly and get some intuition about how it works. We write one test that always passes and another always fails. Please consider that the below only contains **assert** steps.
-```#test_dummy.py
-def test_always_true():    assert True    def test_always_false():    assert False```Now we may ask your Python to run the _pytest_:
+```
+# test_dummy.py
+
+def test_always_true():
+    assert True
+    
+def test_always_false():
+    assert False
+
+```
+  
+Now we may ask your Python to run the _pytest_:
 ```$ python3 -m pytest======================================== test session starts ========================================platform darwin -- Python 3.8.0, pytest-6.2.4, py-1.10.0, pluggy-0.13.1rootdir: /path_to_the_working_directory/plugins: anyio-2.2.0collected 2 items                                                                                   
 test_dummy.py .F                                                                              [100%]
 ============================================= FAILURES ==============================================_________________________________________ test_always_false _________________________________________
