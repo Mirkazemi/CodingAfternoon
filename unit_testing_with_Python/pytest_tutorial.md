@@ -40,13 +40,27 @@ def test_always_false():
 ```
   
 Now we may ask your Python to run the _pytest_:
-```$ python3 -m pytest======================================== test session starts ========================================platform darwin -- Python 3.8.0, pytest-6.2.4, py-1.10.0, pluggy-0.13.1rootdir: /path_to_the_working_directory/plugins: anyio-2.2.0collected 2 items                                                                                   
+```
+$ python3 -m pytest
+
+======================================== test session starts ========================================
+platform darwin -- Python 3.8.0, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: /path_to_the_working_directory/
+plugins: anyio-2.2.0
+collected 2 items                                                                                   
 test_dummy.py .F                                                                              [100%]
-============================================= FAILURES ==============================================_________________________________________ test_always_false _________________________________________
+============================================= FAILURES ==============================================
+_________________________________________ test_always_false _________________________________________
     def test_always_false():>       assert FalseE       assert False
-test_dummy.py:5: AssertionError====================================== short test summary info ======================================FAILED test_dummy.py::test_always_false - assert False==================================== 1 failed, 1 passed in 0.11s ====================================```
+test_dummy.py:5: AssertionError
+====================================== short test summary info ======================================
+FAILED test_dummy.py::test_always_false - assert False
+==================================== 1 failed, 1 passed in 0.11s ====================================
+```
+
 The results of the _pytest_ run are presented like above. The first block (test session starts) shows the system state like Python and pytest versions, root directory, and installed plugins in the first three lines. The other lines indicated the discovered tests. The next block lists the failed tests.
 There are three signs of _._(dot with green color), _F_ (with red color) and _E_ (with red color) in the _pytest_ output that indicate passed test, failed test and raising an unexpected exception in a test.
+
 # _pytest_ syntax
 What exactly _pytest_ command do? In the root directory (and its subdirectories), _pytest_ looks for ```test_*.py``` and ```*_test.py``` files. In such files, _pytest_ looks for ```test``` prefixed test functions, like ```test_func1()```, and runs them.
 The user can asks _pytest_ to specifically run test functions in a module and skip all other modules```$ python3 -m pytest test_module1.py```or to run specific test function in a test module```$ python3 -m pytest test_module1.py::test_funct1.py```where ```test_funct1.py``` is a test function in ```test_module1.py``` module.
