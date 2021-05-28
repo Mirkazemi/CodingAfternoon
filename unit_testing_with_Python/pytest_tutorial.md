@@ -62,7 +62,7 @@ The results of the _pytest_ run are presented like above. The first block (test 
 There are three signs of _._(dot with green color), _F_ (with red color) and _E_ (with red color) in the _pytest_ output that indicate passed test, failed test and raising an unexpected exception in a test.
 
 # _pytest_ syntax
-What exactly _pytest_ command do? In the root directory (and its subdirectories), _pytest_ looks for ```test_*.py``` 
+What exactly _pytest_ command do? In the root directory, _pytest_ looks for ```test_*.py``` 
 and ```*_test.py``` files. In such files, _pytest_ looks for ```test``` prefixed test functions, like ```test_func1()```, and runs them.
 The user can asks _pytest_ to specifically run test functions in a module and skip all other modules
 ```
