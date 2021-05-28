@@ -1,5 +1,11 @@
-# Unit testing in PythonWhat is unit testing?Unit testing is a software development practice by which individual units of a code with associated data and usage procedures are tested to determine whether they are fit for use.
-Why unit testing?Code covered with tests is more reliable than the code without. Unit testing ensures that each unit of the code fulfils required functionalities individually. If a future change breaks something in the code, developers will be able to identify the root of the problem right away rather than coming through an unwieldy codebase to find the issue.
+# Unit testing in Python
+
+What is unit testing?
+Unit testing is a software development practice by which individual units of a code with associated data and usage procedures are tested to determine whether they are fit for use.
+
+Why unit testing?
+Code covered with tests is more reliable than the code without. Unit testing ensures that each unit of the code fulfils required functionalities individually. If a future change breaks something in the code, developers will be able to identify the root of the problem right away rather than coming through an unwieldy codebase to find the issue.
+
 _pytest_ and _unittest_ are two popular unit testing frameworks for Python. The _unittest_ is a built-in Python package and provides a solid base on which to build your test suite, but it has an important shortcoming. In comparison to the pytest, for _unittest_ a significant amount of code is needed to write.
 
 # Install pytest
