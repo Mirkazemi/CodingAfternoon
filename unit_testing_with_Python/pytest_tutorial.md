@@ -62,30 +62,90 @@ The results of the _pytest_ run are presented like above. The first block (test 
 There are three signs of _._(dot with green color), _F_ (with red color) and _E_ (with red color) in the _pytest_ output that indicate passed test, failed test and raising an unexpected exception in a test.
 
 # _pytest_ syntax
-What exactly _pytest_ command do? In the root directory (and its subdirectories), _pytest_ looks for ```test_*.py``` and ```*_test.py``` files. In such files, _pytest_ looks for ```test``` prefixed test functions, like ```test_func1()```, and runs them.
-The user can asks _pytest_ to specifically run test functions in a module and skip all other modules```$ python3 -m pytest test_module1.py```or to run specific test function in a test module```$ python3 -m pytest test_module1.py::test_funct1.py```where ```test_funct1.py``` is a test function in ```test_module1.py``` module.
-For example, we ask _pytest_ to only run ```test_always_true()``` in ```test_dummy.py``` by```$ python3 -m pytest test_dummy.py::test_always_true```and the output is```======================================== test session starts ========================================platform darwin -- Python 3.8.0, pytest-6.2.4, py-1.10.0, pluggy-0.13.1rootdir: /Users/mohammad.mirkazemi/Documents/Afternoon Coding/unit_testingplugins: anyio-2.2.0collected 1 item                                                                                    
+What exactly _pytest_ command do? In the root directory (and its subdirectories), _pytest_ looks for ```test_*.py``` 
+and ```*_test.py``` files. In such files, _pytest_ looks for ```test``` prefixed test functions, like ```test_func1()```, and runs them.
+The user can asks _pytest_ to specifically run test functions in a module and skip all other modules
+```
+$ python3 -m pytest test_module1.py
+```
+or to run specific test function in a test module
+```
+$ python3 -m pytest test_module1.py::test_funct1.py
+```
+where ```test_funct1.py``` is a test function in ```test_module1.py``` module.
+For example, we ask _pytest_ to only run ```test_always_true()``` in ```test_dummy.py``` by
+```
+$ python3 -m pytest test_dummy.py::test_always_true
+```
+and the output is
+```
+======================================== test session starts ========================================
+platform darwin -- Python 3.8.0, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: /Users/mohammad.mirkazemi/Documents/Afternoon Coding/unit_testing
+plugins: anyio-2.2.0
+collected 1 item                                                                                    
 test_dummy.py .                                                                               [100%]
-========================================= 1 passed in 0.01s =========================================```that shows only ```test_always_true``` was run.
+========================================= 1 passed in 0.01s =========================================
+```
+that shows only ```test_always_true``` was run.
+
 # Second example: Arrange-Act-Assert
 Now let's write a more serious example of unit testing. Assuming that we wrote two functions for calculating the perimeter and area of a rectangle like the following. The _test_rectangle_area()_ test function is provided for _rectangle_area()_. Please write the other one test function, _test_rectangle_perimeter()_ for _rectangle_perimeter()_.
-```#test_rectangle_geo.py
-def rectangle_area(x1, x2):    return x1 * x2
-def rectangle_perimeter(x1, x2):    return 2 * (x1 + x2)
-def test_rectangle_area():    x1 = 3 # Arrange    x2 = 4 # Arrange    expected_area = 12 # Arrange    calculated_area = rectangle_area(x1, x2) # Act    assert expected_area == calculated_area # Assert
-# Please implement the following test function for testing rectangle_perimeter()    # def test_rectangle_perimeter():#    # Arrange#    # Act#    # Assert```
-The test function _test_rectangle_perimeter()_ would be like:```# add to test_rectangle_geo.pydef test_rectangle_perimeter():    assert rectangle_perimeter(2, 4) == 12```
-Let's test run _pytest_ on ```test_rectangle_geo.py```:```$ python3 -m pytest test_rectangle_geo.py```
-# 3rd example: Unit testing for a classNow we work on a more realistic example. Assume that we have a class of _Wallet_ with such properties:- an instance of object is initiated with a given initial balance of money- if no initial balance is provided the instance is generated with defaut balance of 0- the balance of the a _Wallet_ instance is saved in ```balance``` attribute- one can add cash to a _Wallet_ instance using ```add``` method- one can add spend from a _Wallet_ instance using ```spend``` method- if one wants to spend more than ```balance``` of the _Wallet_ instance, an NotEnoughCash exception should be raised.
+```
+#test_rectangle_geo.py
+def rectangle_area(x1, x2):
+    return x1 * x2
+
+def rectangle_perimeter(x1, x2):
+    return 2 * (x1 + x2)
+
+def test_rectangle_area():
+    x1 = 3 # Arrange
+    x2 = 4 # Arrange
+    expected_area = 12 # Arrange
+    calculated_area = rectangle_area(x1, x2) # Act
+    assert expected_area == calculated_area # Assert
+
+#Please implement the following test function for testing rectangle_perimeter() 
+def test_rectangle_perimeter():
+    # Arrange
+    # Act    
+    # Assert
+
+```
+
+Let's test run _pytest_ on ```test_rectangle_geo.py```:
+
+```
+$ python3 -m pytest test_rectangle_geo.py
+```
+
+# 3rd example: Unit testing for a class
+
+Now we work on a more realistic example. Assume that we have a class of _Wallet_ with such properties:- an instance of object is initiated with a given initial balance of money- if no initial balance is provided the instance is generated with defaut balance of 0- the balance of the a _Wallet_ instance is saved in ```balance``` attribute- one can add cash to a _Wallet_ instance using ```add``` method- one can add spend from a _Wallet_ instance using ```spend``` method- if one wants to spend more than ```balance``` of the _Wallet_ instance, an NotEnoughCash exception should be raised.
 The _Wallet_ class with such properties can be implemented as below.
-```# wallet.py
-class NotEnoughCash(Exception):    pass
+
+```
+# wallet.py
+
+class NotEnoughCash(Exception):
+    pass
+
 class Wallet(object):
-    def __init__(self, initial_amount=0):        self.balance = initial_amount
-    def spend(self, amount):        if self.balance < amount:            raise NotEnoughCash(f'Not enough cash available to spend {amount}')        self.balance -= amount
-    def add(self, amount):        self.balance += amount        ```
-We write a set of unit tests to test desired properties of the class _Wallet_. Please complete the incomplete test functions:
-```# test_wallet.py
+
+    def __init__(self, initial_amount=0):
+        self.balance = initial_amount
+
+    def spend(self, amount):
+        if self.balance < amount:
+            raise NotEnoughCash(f'Not enough cash available to spend {amount}')
+        self.balance -= amount
+
+    def add(self, amount):
+        self.balance += amount
+
+```
+# test_wallet.py
 import pytestfrom wallet import Wallet, NotEnoughCash
 
 def test_default_initial_amount():    wallet = Wallet()    assert wallet.balance == 0
