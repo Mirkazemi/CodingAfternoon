@@ -37,7 +37,6 @@ def test_always_true():
     
 def test_always_false():
     assert False
-
 ```
   
 Now we may ask your Python to run the _pytest_:
