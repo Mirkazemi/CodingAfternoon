@@ -15,3 +15,5 @@ def test_rectangle_area():
 
 def test_rectangle_perimeter():
     assert rectangle_perimeter(2, 4) == 12
+    
+    
