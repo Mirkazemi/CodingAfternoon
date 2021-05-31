@@ -126,7 +126,8 @@ Now we work on a more realistic example. Assume that we have a class of _Wallet_
 - an instance of object is initiated with a given initial balance of money
 - if no initial balance is provided the instance is generated with defaut balance of 0
 - the balance of the a _Wallet_ instance is saved in ```balance``` attribute
-- one can add cash to a _Wallet_ instance using ```add``` method- one can add spend from a _Wallet_ instance using ```spend``` method
+- one can add cash to a _Wallet_ instance using ```add``` method
+- one can add spend from a _Wallet_ instance using ```spend``` method
 - if one wants to spend more than ```balance``` of the _Wallet_ instance, an NotEnoughCash exception should be raised.
 The _Wallet_ class with such properties can be implemented as below.
 
