@@ -193,7 +193,7 @@ Branching is a powerful tools for developing a software on different paths. For 
 
 Lets go back to our super simple example. Assume that we want to have english and german hello world programms that print in upper case and meanwhile we also work on adding Hello World in dutch (in lower case as before). Thus, we create a new branch based on the last commit and name it 'uppercase'. Then we add two codes for upper case Hello World in english and german. In parallel, we also work on the main branch and add lower case Hello World in dutch. If adding upper case Hello World is a succesful project we **merge** the uppercase branch with master branch. The below figure illustrate what is our plan for develping our software:
 
-![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/git-branches.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/git-branches.png)
 
 As you remember we moved to the second commit so first, we move back to the last commit in the master branch and check where am I:
 
