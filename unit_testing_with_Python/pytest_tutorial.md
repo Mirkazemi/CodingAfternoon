@@ -232,7 +232,35 @@ def test_wallet_spend_cash_raises_exception_on_not_enough_cash(wallet_50):
         wallet_50.spend(100)
         
 ```
+# 5rd example: parametrized test functions
+_pytest_ provides parametrized test functions in order to test different scenarios all in one function. ```@pytest.mark.parametrize``` decorator defines parameters including the names and values and those parameters pass as arguments to the test function.
 
+
+```
+# test_wallet_fixture_parametrize.py
+
+import pytest
+from wallet import Wallet, NotEnoughCash
+
+# wallet_50 returns an instance of Wallet with balance of 50
+@pytest.fixture
+def wallet_50():
+    return Wallet(50)
+
+@pytest.mark.parametrize("spent, expected", [
+    (0, 50),
+    (10, 40),
+    (20, 30),
+    (30, 20),  
+    (40, 10),
+    (50, 0),          
+])
+def test_transactions(wallet_50, spent, expected):
+    wallet_50.spend(spent)
+    assert wallet_50.balance == expected
+    
+```
+    
 # Summary
 Unit testing is one of the software testing practices by which the smallest components of a software are tested individually. It also helps you to find the probable bugs which are created by future changes in the code. The AAA (Arrange-Act-Assert) pattern is a standard for software testing:
 
