@@ -3,15 +3,15 @@
 In this tutorial, we learn how to use Github for individual and group projects. Github is a distributed version control and source code management tool. It allows developers to code in a collaboration. As a user in the Github you can make a copy of codes of someone else and separately work on it. The action of making a copy of a software is called **fork**. Once you have forked a repository, you own your forked copy. This means that you can edit the contents of your forked repository without impacting the parent repo.
 
 Please go to the https://github.com/mirkazemi1984/HelloWorldProject
-On the right hand side of the page you can find the fork button. ![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/form.png)
+On the right hand side of the page you can find the fork button. ![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/form.png)
 
 Please click on it then you will have an independent copy of the **HelloWorldProject**.
 
 When you create or fork a repository on GitHub, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations. To clone the repository, first find the 'code' button and click on it:
-![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/code-button.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/code-button.png)
 
 To clone the repository using HTTPS, under "Clone with HTTPS", click on the button below to copy the HTTPS address of the repository.
-![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/https-url-clone-cli.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/https-url-clone-cli.png)
 
 Now, as explained in Git Tutorial create a project folder and initiate Git:
 
@@ -85,7 +85,7 @@ If you check the forked repository, you will find out that it is updated.
 ### Cloning a Remote Branch
 In collaborative coding projects, each member of a team develops part or parts of the project. Each part of the project is actually developed on a branch of a repository. After a successful progress, you can merge your branch into main or other higher rank branches.
 
-![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/gitflow_1.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/gitflow_1.png)
 
 Source: https://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/
 
@@ -93,7 +93,7 @@ So assume that you are a team member of Hello World project and you are responsi
 
 We first create a new branch in Github repository and name it 'uppercase'. In the page of the forked repository click on 'main' and enter the name of the new branch like below figure and press Enter.
 
-![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/uppercase_branch.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/uppercase_branch.png)
 
 Now again clone the repository:
 ```console
@@ -152,15 +152,15 @@ Now the remote Github repository is updated by our local repository including 'h
  tool. It allows developers to code in a collaboration. As a user in the Github you can make a copy of codes of someone else and separately work on it. The action of making a copy of a software is called **fork**. Once you have forked a repository, you own your forked copy. This means that you can edit the contents of your forked repository without impacting the parent repo.
 
 Please go to the https://github.com/mirkazemi1984/HelloWorldProject
-On the right hand side of the page you can find the fork button. ![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/form.png)
+On the right hand side of the page you can find the fork button. ![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/form.png)
 
 Please click on it then you will have an independent copy of the **HelloWorldProject**.
 
 When you create or fork a repository on GitHub, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations. To clone the repository, first find the 'code' button and click on it:
-![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/code-button.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/code-button.png)
 
 To clone the repository using HTTPS, under "Clone with HTTPS", click on below button to copy the HTTPS address of the repository.
-![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/https-url-clone-cli.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/https-url-clone-cli.png)
 
 Now, as explained in Git Tutorial create a project folder and initiate Git:
 
@@ -234,7 +234,7 @@ If you check the forked repository, you will find out that it is updated.
 ### Cloning a Remote Branch
 In collaborative coding project, each member of a team develops part or parts of the project. Each part of project is actually develop on a branch of a repository. After a successful progress, you can merge your branch into main or other higher rank branches.
 
-![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/gitflow_1.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/gitflow_1.png)
 
 Source: https://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/
 
@@ -242,7 +242,7 @@ So assume that you are a team member of Hello World project and you are responsi
 
 We first create a new branch in Github repository and name it 'uppercase'. In the page of the forked repository click on 'main' and enter the name of the new branch like below figure and press Enter.
 
-![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/uppercase_branch.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/uppercase_branch.png)
 
 Now again clone the repository:
 ```console
