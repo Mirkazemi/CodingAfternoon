@@ -1,4 +1,6 @@
-InstantDL is a deep learning pipeline package for image processing. The package was presented by Dominik Waibel on March 19, 2021. 
+# InstantDL: a deep learning pipeline package for image processing
+
+The package was presented by Dominik Waibel on March 19, 2021. 
 
 Abstract: We have developed InstantDL, a deep learning pipeline for four common image processing tasks: semantic segmentation, 
 instance segmentation, pixel-wise regression and classification. InstantDL enables researchers with a basic computational background 
