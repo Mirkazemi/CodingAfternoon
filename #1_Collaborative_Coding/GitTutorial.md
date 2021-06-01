@@ -14,11 +14,11 @@ A: So … we can recall specific versions of our files at any time.
 
 B: Exactly. And moreover, it allows the people to collaborate  on a project and have their own version of project files on their local computers!
 
-![logs_graph](https://github.com/Mirkazemi/#1 Collaborative Coding/blob/main/images/git-comic-4.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/git-comic-4.png)
 
 Git works based on the repositories and a Git repository is a folder called .git/ inside a project. The repository tracks and records all changes in a project. If we delete the .git/ folder, all the history of the changes are deleted. 
 
-![logs_graph](https://github.com/Mirkazemi/CollaborativeCoding/blob/main/images/git_structure.png)
+![logs_graph](https://github.com/Mirkazemi/CodingAfternoon/blob/main/%231_Collaborative_Coding/images/git_structure.png)
 
 Git is a command line based tool although it is partially supported by many graphical user interfaces (e.g. some of code editors).  Thus is this tutorial we only focus using Git in the command line.
 
